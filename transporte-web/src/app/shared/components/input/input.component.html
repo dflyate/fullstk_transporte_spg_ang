@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label> {{ label }} </mat-label>
+    <input 
+        matInput
+        [formControl]="control"
+        [type]="type"
+        autocomplete="off"
+        [maxlength]="maxlength ?? null"
+    />
+    <mat-error *ngIf="control?.hasError('required') && control?.touched">
+        {{ label }} es obligatorio
+    </mat-error>
+</mat-form-field>

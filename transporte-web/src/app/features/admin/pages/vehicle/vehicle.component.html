@@ -1,0 +1,24 @@
+<form [formGroup]="vehicleForm" class="form-wrapper" (ngSubmit)="onSubmit()">
+    <h2>VEHÍCULO</h2>
+    <div class="form-grid columns-3" formGroupName="vehicleForm">
+        <app-input label="Placa" type="text" [control]="getVehicleFormControl('plate')" [maxlength]="10"></app-input>
+        <app-input label="Motor" type="text" [control]="getVehicleFormControl('engine')" [maxlength]="50"></app-input>
+        <app-input label="Chasis" type="text" [control]="getVehicleFormControl('chassis')" [maxlength]="50"></app-input>
+        <app-input label="Modelo" type="text" [control]="getVehicleFormControl('model')" [maxlength]="20"></app-input>
+        <app-input label="Fecha de registro" type="text" [control]="getVehicleFormControl('registrationDate')" [hidden]="!isEditMode"></app-input>
+        <app-input label="Pasajeros sentados" type="number" [control]="getVehicleFormControl('seatedPassengers')"></app-input>
+        <app-input label="Pasajeros de pie" type="number" [control]="getVehicleFormControl('standingPassengers')"></app-input>
+        <app-input label="Peso seco" type="number" [control]="getVehicleFormControl('dryWeight')"></app-input>
+        <app-input label="Peso promedio" type="number" [control]="getVehicleFormControl('grossWeight')" ></app-input>
+        <app-input label="Puertas" type="number" [control]="getVehicleFormControl('doors')" ></app-input>
+        <app-input label="Marca" type="text" [control]="getVehicleFormControl('brand')" [maxlength]="50"></app-input>
+        <app-input label="Línea" type="text" [control]="getVehicleFormControl('line')" [maxlength]="50"></app-input>
+    </div>
+
+    <app-button
+            text="Guardar"
+            color="primary"
+            type="submit"
+            [disabled]="vehicleForm.invalid" 
+        ></app-button>
+</form>

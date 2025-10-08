@@ -1,0 +1,38 @@
+<form [formGroup]="mainForm" class="form-wrapper" (ngSubmit)="onSubmit()">
+    <h2>EMPRESA DE TRANSPORTE</h2>
+    <div class="form-grid columns-3" formGroupName="transportForm">
+        <app-select label="Tipo de Documento" [control]="getTransportFormControl('documentType')" [options]="documentTypes" required="true"></app-select>
+        <app-input label="Número de Documento" type="text" [control]="getTransportFormControl('documentNumber')" [maxlength]="50"></app-input>
+        <app-input label="Nombre completo" type="text" [control]="getTransportFormControl('fullName')" [maxlength]="255"></app-input>
+        <app-input label="Dirección" type="text" [control]="getTransportFormControl('address')" [maxlength]="255"></app-input>
+        <app-select label="Ciudad" [control]="getTransportFormControl('city')" [options]="cities" ></app-select>
+        <app-select label="Departamento" [control]="getTransportFormControl('department')" [options]="departments"></app-select>
+        <app-select label="País" [control]="getTransportFormControl('country')" [options]="countries"></app-select>
+        <app-input label="Teléfono" type="text" [control]="getTransportFormControl('phone')" [maxlength]="30"></app-input>
+    </div>
+
+    <h2>REPRESENTANTE LEGAL</h2>
+    <div class="form-grid columns-3" formGroupName="legalRepresentativeForm">
+        <app-select label="Tipo de Documento" [control]="getLegalRepControl('documentType')" [options]="documentTypes" required="true"></app-select>
+        <app-input label="Número de Documento" type="text" [control]="getLegalRepControl('documentNumber')" [maxlength]="50"></app-input>
+        <app-input label="Nombre completo" type="text" [control]="getLegalRepControl('fullName')" [maxlength]="255"></app-input>
+        <app-input label="Dirección" type="text" [control]="getLegalRepControl('address')" [maxlength]="255"></app-input>
+        <app-select label="Ciudad" [control]="getLegalRepControl('city')" [options]="cities" ></app-select>
+        <app-select label="Departamento" [control]="getLegalRepControl('department')" [options]="departments"></app-select>
+        <app-select label="País" [control]="getLegalRepControl('country')" [options]="countries"></app-select>
+        <app-input label="Teléfono" type="text" [control]="getLegalRepControl('phone')" [maxlength]="30"></app-input>
+    </div>
+
+    <h2>USUARIO</h2>
+    <div class="form-grid columns-3" formGroupName="userForm">
+        <app-input label="Usuario" type="text" [control]="getUserControl('username')" [maxlength]="50"></app-input>
+        <app-input label="Contraseña" type="password" [control]="getUserControl('password')" [maxlength]="200"></app-input>
+    </div>
+
+    <app-button
+            text="Guardar"
+            color="primary"
+            type="submit"
+            [disabled]="mainForm.invalid" 
+        ></app-button>
+</form>

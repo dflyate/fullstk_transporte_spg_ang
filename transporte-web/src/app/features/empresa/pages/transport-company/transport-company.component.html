@@ -1,0 +1,25 @@
+<form [formGroup]="mainForm" class="form-wrapper">
+    <h2>EMPRESA DE TRANSPORTE</h2>
+    <div class="form-grid columns-3" formGroupName="transportForm">
+        <app-input label="Tipo de Documento" [control]="getTransportFormControl('documentType')" type="text"></app-input>
+        <app-input label="Número de Documento" type="text" [control]="getTransportFormControl('documentNumber')"></app-input>
+        <app-input label="Nombre completo" type="text" [control]="getTransportFormControl('fullName')"></app-input>
+        <app-input label="Dirección" type="text" [control]="getTransportFormControl('address')" ></app-input>
+        <app-input label="Ciudad" [control]="getTransportFormControl('city')" type="text"></app-input>
+        <app-input label="Departamento" [control]="getTransportFormControl('department')" type="text"></app-input>
+        <app-input label="País" [control]="getTransportFormControl('country')" type="text"></app-input>
+        <app-input label="Teléfono" type="text" [control]="getTransportFormControl('phone')" ></app-input>
+    </div>
+
+    <h2>REPRESENTANTE LEGAL</h2>
+    <div class="form-grid columns-3" formGroupName="legalRepresentativeForm">
+        <app-input label="Tipo de Documento" [control]="getLegalRepControl('documentType')" type="text"></app-input>
+        <app-input label="Número de Documento" type="text" [control]="getLegalRepControl('documentNumber')" ></app-input>
+        <app-input label="Nombre completo" type="text" [control]="getLegalRepControl('fullName')" ></app-input>
+        <app-input label="Dirección" type="text" [control]="getLegalRepControl('address')" ></app-input>
+        <app-input label="Ciudad" [control]="getLegalRepControl('city')" type="text"></app-input>
+        <app-input label="Departamento" [control]="getLegalRepControl('department')" type="text"></app-input>
+        <app-input label="País" [control]="getLegalRepControl('country')" type="text"></app-input>
+        <app-input label="Teléfono" type="text" [control]="getLegalRepControl('phone')" ></app-input>
+    </div>
+</form>

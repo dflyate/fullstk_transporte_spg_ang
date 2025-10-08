@@ -1,0 +1,15 @@
+SELECT 
+    v.plate AS placa,
+    tc.document_type AS tipo_de_documento,
+    tc.document_number AS numero_documento,
+    tc.full_name AS nombre_completo,
+    COUNT(DISTINCT vd.driver_id) AS cantidad_conductores
+FROM
+    vehicle v
+JOIN vehicle_affiliation va ON v.id = va.vehicle_id
+JOIN transport_company tc ON tc.id = va.company_id
+LEFT JOIN vehicle_driver vd 
+ON vd.vehicle_id = v.id AND vd.disaffiliation_date IS NULL
+WHERE va.disaffiliation_date IS NULL
+GROUP BY v.id, v.plate, tc.document_type, tc.document_number, tc.full_name
+HAVING COUNT(DISTINCT vd.driver_id) > 2

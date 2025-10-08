@@ -1,0 +1,13 @@
+<form [formGroup]="driverForm" class="form-wrapper">
+    <h2>CONDUCTOR</h2>
+    <div class="form-grid columns-3" formGroupName="driverForm">
+        <app-input label="Tipo de Documento" type="text" [control]="getDriverFormControl('documentType')" ></app-input>
+        <app-input label="Número de Documento" type="text" [control]="getDriverFormControl('documentNumber')" ></app-input>
+        <app-input label="Nombre completo" type="text" [control]="getDriverFormControl('fullName')"></app-input>
+        <app-input label="Dirección" type="text" [control]="getDriverFormControl('address')"></app-input>
+        <app-input label="Ciudad" type="text" [control]="getDriverFormControl('city')" ></app-input>
+        <app-input label="Departamento" type="text" [control]="getDriverFormControl('department')" ></app-input>
+        <app-input label="País" type="text" [control]="getDriverFormControl('country')" ></app-input>
+        <app-input label="Teléfono" type="text" [control]="getDriverFormControl('phone')" ></app-input>
+    </div>
+</form>

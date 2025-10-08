@@ -1,0 +1,16 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" #sidenav opened class="sidenav">
+        <app-side-nav [menuItems]="menuItems"></app-side-nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar style="position: sticky; top: 0; z-index: 1000;">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>{{ title }}</span>
+            <span class="spacer"></span>
+            <button mat-button (click)="logout()"><mat-icon>logout</mat-icon></button>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

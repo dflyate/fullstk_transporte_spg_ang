@@ -1,0 +1,20 @@
+<form [formGroup]="driverForm" class="form-wrapper" (ngSubmit)="onSubmit()">
+    <h2>CONDUCTOR</h2>
+    <div class="form-grid columns-3" formGroupName="driverForm">
+        <app-select label="Tipo de Documento" [control]="getDriverFormControl('documentType')" [options]="documentTypes" required="true"></app-select>
+        <app-input label="Número de Documento" type="text" [control]="getDriverFormControl('documentNumber')" [maxlength]="50"></app-input>
+        <app-input label="Nombre completo" type="text" [control]="getDriverFormControl('fullName')" [maxlength]="255"></app-input>
+        <app-input label="Dirección" type="text" [control]="getDriverFormControl('address')" [maxlength]="255"></app-input>
+        <app-select label="Ciudad" [control]="getDriverFormControl('city')" [options]="cities" ></app-select>
+        <app-select label="Departamento" [control]="getDriverFormControl('department')" [options]="departments"></app-select>
+        <app-select label="País" [control]="getDriverFormControl('country')" [options]="countries"></app-select>
+        <app-input label="Teléfono" type="text" [control]="getDriverFormControl('phone')" [maxlength]="30"></app-input>
+    </div>
+
+    <app-button
+            text="Guardar"
+            color="primary"
+            type="submit"
+            [disabled]="driverForm.invalid" 
+        ></app-button>
+</form>

@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.form-grid {
+    display: grid;
+    gap: 36px;
+}
+
+.columns-1 {
+    grid-template-columns: 1fr;
+}
+
+.columns-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.columns-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-wrapper {
+    margin: 0 auto;
+    margin-top: 48px;
+    padding: 0 24px;
+    max-width: 1000px;
+}
+
+h2 {
+    margin: 40px 0 !important;
+}
+
+.container {
+  max-width: 80%;
+  overflow: auto;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.botton-container {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}

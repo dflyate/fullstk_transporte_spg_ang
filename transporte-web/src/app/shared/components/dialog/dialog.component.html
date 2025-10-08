@@ -1,0 +1,21 @@
+<div class="dialog-container" [ngClass]="data.type">
+<h2 mat-dialog-title class="dialog-title">
+    <mat-icon>
+        {{ data.type === 'error' ? 'error' : data.type === 'success' ? 'check_circle' : data.type === 'warning' ? 'warning' : 'info' }}
+    </mat-icon>
+    {{ data.title }}
+</h2>
+
+<mat-dialog-content>
+    <p>{{ data.message }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button *ngIf="data.actionBtn"
+            mat-button color="primary"
+            (click)="dialogRef.close('action')">
+    {{ data.actionBtn.text }}
+    </button>
+    <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>
+</div>
