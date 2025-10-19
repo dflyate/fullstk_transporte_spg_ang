@@ -57,7 +57,7 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
     	CorsConfiguration config = new CorsConfiguration();
     	config.setAllowedOrigins(List.of(
-    	    "http://localhost:4200", // para desarrollo local
+    	    "http://localhost:4200", // para desarrollo local 
     	    "https://transporte-front.onrender.com" // nube
     	));
     	config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
